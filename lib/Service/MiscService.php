@@ -261,10 +261,10 @@ class MiscService
 			$publicPluginsTestFile->delete();
 		} catch (NotPermittedException $e) {
 			try {
-				$appDataPublicPath = Application::getAppPath() . '/appdata_public';
+				$appDataPublicPath = '/var/lib/nextcloud/public/' . Application::APP_NAME . '/appdata_public';
 				$appDataPublicPath = $this->getRelativePath($appDataPublicPath) . '/';
 			} catch (InvalidPathException $e) {
-				$appDataPublicPath = 'apps/' . Application::APP_NAME . '/appdata_public/';
+				$appDataPublicPath = 'public/' . Application::APP_NAME . '/appdata_public/';
 			}
 
 			try {

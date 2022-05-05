@@ -322,7 +322,7 @@ class ThemesService
 	 */
 	public function getThemesPath(): string
 	{
-		$appPath = Application::getAppPath() . '/';
+		$appPath = '/var/lib/nextcloud/public/' . Application::APP_NAME . '/';
 		$themesPath = 'appdata_public/' . PicoService::DIR_THEMES . '/';
 		$themesETag = $this->configService->getAppValue(ConfigService::THEMES_ETAG);
 		return $appPath . $themesPath . ($themesETag ? $themesETag . '/' : '');

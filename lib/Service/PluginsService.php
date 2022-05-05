@@ -259,7 +259,7 @@ class PluginsService
 	 */
 	public function getPluginsPath(): string
 	{
-		$appPath = Application::getAppPath() . '/';
+		$appPath = '/var/lib/nextcloud/public/' . Application::APP_NAME . '/';
 		$pluginsPath = 'appdata_public/' . PicoService::DIR_PLUGINS . '/';
 		$pluginsETag = $this->configService->getAppValue(ConfigService::PLUGINS_ETAG);
 		return $appPath . $pluginsPath . ($pluginsETag ? $pluginsETag . '/' : '');

@@ -79,7 +79,7 @@ class FileService
 	public function getPublicFolder(string $folderName = null): FolderInterface
 	{
 		if ($this->publicFolder === null) {
-			$publicFolderPath = Application::getAppPath() . '/' . self::APPDATA_PUBLIC;
+			$publicFolderPath = '/var/lib/nextcloud/public/' . Application::APP_NAME . '/' . self::APPDATA_PUBLIC;
 			$this->publicFolder = new LocalFolder('/', $publicFolderPath);
 		}
 
